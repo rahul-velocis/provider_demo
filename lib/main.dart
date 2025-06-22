@@ -2,11 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_demo/homepage.dart';
 import 'package:provider_demo/provider/counter_provider.dart';
+import 'package:provider_demo/provider/name_provider.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => CounterProvider(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider<CounterProvider>(
+          create: (_) => CounterProvider(),
+        ),
+        ChangeNotifierProvider<NameProvider>(create: (_) => NameProvider()),
+      ],
       child: MyApp(),
     ),
   );

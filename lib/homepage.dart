@@ -21,6 +21,21 @@ class Homepage extends StatelessWidget {
               context.watch<CounterProvider>().counter.toString(),
               style: TextStyle(fontSize: 30),
             ),
+            SizedBox(height: 20),
+            Text('This is the name variable', style: TextStyle(fontSize: 20)),
+            Text('Rahul', style: TextStyle(fontSize: 30)),
+            SizedBox(height: 20),
+
+            SizedBox(
+              width: MediaQuery.sizeOf(context).width * 0.7,
+              child: TextField(
+                onChanged: (value) {},
+                decoration: InputDecoration(border: OutlineInputBorder()),
+              ),
+            ),
+            SizedBox(height: 20),
+
+            ElevatedButton(onPressed: () {}, child: Text('Clear Name')),
           ],
         ),
       ),
